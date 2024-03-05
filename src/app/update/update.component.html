@@ -1,0 +1,52 @@
+<form #employeeForm="ngForm">
+  <div class="header">
+    <h4>Employee Updation Form</h4>
+  </div>
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="employeeID" class="col-fixed" style="width:100px">Employee ID</label>
+      <div class="col">
+        <input id="employeeID" type="number" class="p-inputtext" name="id" [(ngModel)]="employeeData.id" required>
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="name" class="col-fixed" style="width:100px">Name</label>
+      <div class="col">
+        <input id="name" type="text" class="p-inputtext" name="name" [(ngModel)]="employeeData.name" required>
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="position" class="col-fixed" style="width:100px">Position</label>
+      <div class="col">
+        <input id="position" type="text" class="p-inputtext" name="position" [(ngModel)]="employeeData.position" required>
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="department" class="col-fixed" style="width:100px">Department</label>
+      <div class="col">
+        <input id="department" type="text" class="p-inputtext" name="department" [(ngModel)]="employeeData.department" required>
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="location" class="col-fixed" style="width:100px">Location</label>
+      <div class="col">
+        <p-dropdown name="location" [options]="cityOptions" [(ngModel)]="employeeData.location" [showClear]="true" placeholder="Select a City" [style]="{'width': '200px'}"></p-dropdown>
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="email" class="col-fixed" style="width:100px">Email</label>
+      <div class="col">
+        <input id="email" type="email" class="p-inputtext" name="email" [(ngModel)]="employeeData.email" >
+      </div>
+    </div>
+    <div class="p-field">
+      <label for="phoneNumber" class="col-fixed" style="width:100px">Phone Number</label>
+      <div class="col">
+        <input id="phoneNumber" type="text" class="p-inputtext" name="phoneNumber" [(ngModel)]="employeeData.phoneNumber" required>
+      </div>
+    </div>
+  </div>
+  <div>
+    <p-button type="Submit" severity="success" (click)="updateEmployee(employeeForm)" [disabled]="!employeeForm.valid">Submit</p-button>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+<ag-grid-angular
+class="ag-theme-quartz-auto-dark"
+style="height: 500px;width: 900px;"
+[rowSelection]="'multiple'"
+(gridReady)="onGridReady($event)"
+[rowData]="rowData"
+[columnDefs]="columnDefs">
+</ag-grid-angular>
+
+<div class="card flex justify-content-center gap-2">
+  <p-button icon="pi pi-trash" class="delete-btn"  (onClick)="SoftDelete()"  severity="danger" ></p-button>
+
+  <p-button  class="delete-btn" (onClick)="ViewDeletedRows()" >View Deleted rows</p-button>
+</div>

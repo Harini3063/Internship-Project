@@ -1,0 +1,42 @@
+
+
+.grid-layout
+{
+  margin-top: auto;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: auto;
+  border-collapse: collapse;
+}
+.page-container {
+  display: flex;
+  height: 100vh;
+}
+
+
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+
+  background-color: #f0f0f0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 0 10px;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+

@@ -1,0 +1,71 @@
+<p-sidebar [(visible)]="addbarVisible" styleClass="w-30rem" position="right">
+
+  <form #employeeForm="ngForm" >
+    <div class="header">
+      <h3>Employee Registration</h3>
+    </div>
+    <div class="p-fluid ">
+      <div class="p-field">
+        <label for="name" class="col-fixed" style="width:100px">Name</label>
+        <div class="col">
+          <input id="name" type="text" name="name" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary form-control"  [(ngModel)]="employeeData.name" required #name="ngModel" minlength="3">
+          <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors?.['required']" style="color: rgb(133, 25, 25);background-color: rgb(234, 196, 191);width: 204px; padding: 2px; margin: 2px soild rgb(133, 25, 25); border-radius: 10px;"> *Name is required</div>
+            <div *ngIf="name.errors?.['minlength']" style="color: rgb(133, 25, 25);background-color: rgb(234, 196, 191);width: 204px; padding: 2px; margin: 2px soild rgb(133, 25, 25); border-radius: 10px;"> *Min. 3 characters</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="position" class="col-fixed" style="width:100px">Position</label>
+        <div class="col">
+          <input id="position" type="text" name="position" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary form-control" [(ngModel)]="employeeData.position" required #position="ngModel">
+          <div *ngIf="position.invalid && (position.dirty || position.touched)" class="alert alert-danger">
+            <div *ngIf="position.errors?.['required']" style="color: rgb(133, 25, 25);background-color: rgb(234, 196, 191);width: 204px; padding: 2px; margin: 2px soild rgb(133, 25, 25); border-radius: 10px;"> *Position is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-field">
+        <label for="department" class="col-fixed" style="width:100px">Department</label>
+        <div class="col">
+          <input id="department" type="text" name="department" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary" [(ngModel)]="employeeData.department" required #dep="ngModel">
+          <div *ngIf="dep.invalid && (dep.dirty || dep.touched)" class="alert alert-danger">
+            <div *ngIf="dep.errors?.['required']" style="color: rgb(133, 25, 25);background-color: rgb(234, 196, 191);width: 204px; padding: 2px; margin: 2px soild rgb(133, 25, 25); border-radius: 10px;"> *Department is required</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-field">
+        <label for="phoneNumber" class="col-fixed" style="width:100px">Email</label>
+        <div class="col">
+          <input id="email" type="email" name="email" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"  [(ngModel)]="employeeData.email">
+        </div>
+      </div>
+
+      <div class="p-field">
+        <label for="phoneNumber" style="width:100px">Phone Number</label>
+        <div class="col">
+          <input id="phoneNumber" type="text" name="phoneNumber" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary"  [(ngModel)]="employeeData.phoneNumber" required #num="ngModel">
+          <div *ngIf="num.invalid && (num.dirty || num.touched)" class="alert alert-danger">
+            <div *ngIf="num.errors?.['required']" style="color: rgb(133, 25, 25);background-color: rgb(234, 196, 191);width: 204px; padding: 2px; margin: 2px soild rgb(133, 25, 25); border-radius: 10px;"> *number is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="p-field w-10">
+        <label for="location" class="col-fixed" style="width:100px">Location</label>
+        <div class="col">
+          <p-dropdown name="location" [options]="cityOptions" [(ngModel)]="employeeData.location" [showClear]="true" placeholder="Select a City" [style]="{'width': '200px'}"></p-dropdown>
+        </div>
+      </div>
+
+    </div>
+    <div>
+      <p-toast></p-toast>
+      <p-button type="Submit" severity="success" (click)="submitForm(employeeForm)" [disabled]="!employeeForm.valid">Submit</p-button>
+
+    </div>
+  </form>
+
+</p-sidebar>
+
+

@@ -1,0 +1,70 @@
+.overflow-y-auto{
+  overflow-y: auto;
+}
+div{
+  display: block;
+}
+
+.p-ripple:hover {
+  font-size: large;
+}
+
+
+.p-ripple:hover i, .p-ripple:hover span
+{
+  color: #ffffff;
+  
+
+}
+
+.sidebar-expanded{
+  width: 170px;
+  height: 100vh;
+  border-right: 2cm black;
+  color:#ffffff;
+  background: #64748b;
+  border: 1px solid #64748b;
+  transition: ease-out .4s;
+
+}
+
+.sidebar-collapsed
+{
+width: 80px;
+height: 100vh;
+border-right: 2cm black;
+color: #ffffff;
+background: #64748b;
+border: 1px solid #000000;
+transition: ease-in .4s
+}
+
+.menu-label {
+  flex-grow: 1;
+  margin-left: 8px;
+  opacity: 1;
+  transition: ease-out .3s;
+
+}
+
+
+.sidebar-collapsed:hover .menu-label
+{
+  opacity: 1;
+}
+.toggleicon
+{
+  background-color: #64748b;
+  color: #ffffff;
+}
+.add-btn
+{
+  background-color: #64748b;
+  color: #ffffff;
+}
+
+
+
+
+
+

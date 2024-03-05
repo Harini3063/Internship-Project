@@ -1,0 +1,46 @@
+<div class="scanner-container" style="width: 100vh;">
+
+  <div class="buttons">
+    <p-button (click)="openScanner() " [rounded]="true" size="small" severity="success" [raised]="true" >Scan</p-button>
+
+    <p-button (click)="ScannerExit()"[rounded]="true" size="small" severity="danger" [raised]="true" class="px-4"> Exit</p-button>
+  </div>
+  <div class="displayBlock">
+    <div class="scanner-container-inner" *ngIf="showScanner">
+      <zxing-scanner
+          (camerasFound)="onCamerasFound($event)"
+          (scanSuccess)="onScanSuccess($event)"
+          (scanError)="onScanError($event)"
+          [formats]="barcodeFormats"
+          [torch]="torchEnabled"
+          [enable]="true"
+          [tryHarder]="false"
+          [device]="selectedDevice"
+          (deviceChange)="handleDeviceChange($event)">
+      </zxing-scanner>
+      <section class="results" *ngIf="qrResultString">
+        <div class="result-content">
+            <small>Result   </small>
+            <strong>{{ qrResultString }}</strong>
+        </div>
+        <div class="close-button">
+            <button pButton type="button" icon="pi pi-times" (click)="clearResult()" label="Close" class="p-button-text"></button>
+        </div>
+      </section>
+    </div>
+    <div class="container" *ngIf="showResult">
+      <div class="card">
+        <div class="card-title">
+          <h3>Employee Details</h3>
+        </div>
+        <p>ID           : {{ employee.id }}</p>
+        <p>Name         : {{ employee.name }}</p>
+        <p>Department   : {{ employee.department }}</p>
+        <p>Position     : {{ employee.position }}</p>
+        <p>Email        : {{ employee.email }}</p>
+        <p>Phone Number : {{ employee.phoneNumber }}</p>
+        <p>Location     : {{ employee.location }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+.scanner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.buttons{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.scanner-container-inner{
+  height: auto;
+  width: 400px;
+  border: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.results {
+  background-color: cadetblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button
+{
+  color: red;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px; /* Fix to the right */
+}
+.scanner-container-inner,
+.container {
+  margin-top: 5px;
+  width: 100%;
+  flex: 1; /* Flex-grow: 1 to make them fill the available space */
+  margin-right: 10px; /* Adjust margin as needed for spacing */
+}
+
+.displayblock
+{
+  display: flex;
+
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card
+{
+  font-family: 'Times New Roman', Times, serif;
+}
+.container
+{border: 2px solid black;}
+

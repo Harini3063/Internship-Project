@@ -1,0 +1,14 @@
+<ag-grid-angular
+class="ag-theme-quartz-auto-dark"
+style="height: 500px;width: 900px;"
+(gridReady)="onGridReady($event)"
+[rowData]="deletedRows"
+[columnDefs]="columnDefs">
+</ag-grid-angular>
+<div class="card flex justify-content-center gap-2">
+  <p-toast></p-toast>
+  <p-confirmDialog></p-confirmDialog>
+  <p-button icon="pi pi-trash" label="Delete permanently" class="delete-btn" (onClick)="confirmDelete($event)"  severity="danger" ></p-button>
+  <p-button icon="pi pi-replay" label="restore" class="delete-btn" (onClick)="confirmRestore($event)"  severity="info" ></p-button>
+</div>
+

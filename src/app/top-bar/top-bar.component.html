@@ -1,0 +1,42 @@
+<div class="flex align-items-center border-bottom-2  shadow-3 m-0 px-5 py-10 " style="color: rgb(0, 0, 0); height: 70px;">
+
+  <div class="flex-grow-1">
+    <p id="title">Barcode Scanner</p>
+  </div>
+  <div class="flex menu-panel">
+    <div class="search-bar" >
+      <p-button icon="pi pi-search" [rounded]="true" size="small"  [raised]="true" pTooltip="search" tooltipPosition="left" routerLink="/list-employee"></p-button>
+      <input *ngIf="showInputBar" type="text"  placeholder="Search" class=" ml-2 p-component border-none h-3rem sm:h-2rem w-5rem sm:w-15rem" spellcheck="false">
+    </div>
+    <div class="add ml-2" >
+      <p-button icon="pi pi-plus" [rounded]="true" size="small"  [raised]="true" pTooltip="Add" tooltipPosition="left"  (onClick)="OpenAddPannel()"></p-button>
+    </div>
+    <div class="edit ml-2" >
+      <p-button icon="pi pi-file-edit" [rounded]="true" size="small"  [raised]="true" pTooltip="edit" tooltipPosition="left" routerLink="/update"></p-button>
+    </div>
+  </div>
+</div>
+<app-add></app-add>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
